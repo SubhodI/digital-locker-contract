@@ -33,10 +33,11 @@ contract TestDocument {
     bytes32 expectedURL1="";
     bytes32 expectedURL2="";
 
+
     Assert.equal(expected[0], expectedName, "Name should be empty");
     Assert.equal(expected[1], expectedURL1, "Reference URL1 should be empty");
     Assert.equal(expected[2], expectedURL2, "Reference URL2 should be empty");
   }
-
+ 
   
 }
