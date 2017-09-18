@@ -1,0 +1,32 @@
+{
+  "name": "digital-locker-coverage",
+  "version": "1.0.0",
+  "description": "Contract",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "solidity-coverage": "^0.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "truffle test",
+    "coverage": "./node_modules/.bin/solidity-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SubhodI/digital-locker-contract.git"
+  },
+  "keywords": [
+    "solcover",
+    "ethereum",
+    "soldiity"
+  ],
+  "author": "SubhodI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SubhodI/digital-locker-contract/issues"
+  },
+  "homepage": "https://github.com/SubhodI/digital-locker-contract#readme"
+}
