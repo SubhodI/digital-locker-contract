@@ -22,5 +22,21 @@ contract TestDocument {
     Assert.equal(expected[2], expectedURL2, "Reference URL2 should be same");
   }
 
+  function testUpdateDocument() {
+    Document document = Document(DeployedAddresses.Document());
+
+    document.deleteDocument("name");
+
+    bytes32[4] memory expected = document.getDocument("name");
+
+    bytes32 expectedName="";
+    bytes32 expectedURL1="";
+    bytes32 expectedURL2="";
+
+    Assert.equal(expected[0], expectedName, "Name should be empty");
+    Assert.equal(expected[1], expectedURL1, "Reference URL1 should be empty");
+    Assert.equal(expected[2], expectedURL2, "Reference URL2 should be empty");
+  }
+
   
 }
