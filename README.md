@@ -7,6 +7,8 @@ Installation:
  ```bash
     git clone https://github.com/SubhodI/digital-locker-contract
     cd digital-locker-contract
-    npm install -save-dev solidity-coverage 
+    npm install 
     ./node_modules/.bin/solidity-coverage 
  ```
+ 
+Check in coverage direcorty for code coverage results rendered using HTML.
