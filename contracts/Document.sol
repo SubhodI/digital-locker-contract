@@ -56,6 +56,8 @@ contract Document {
         for (uint i = 0; i < tags[msg.sender].documentTags.length; i++) {
             if (tags[msg.sender].documentTags[i] == name) {
                 delete tags[msg.sender].documentTags[i];
+            } else {
+                throw;
             }
         }
         delete documents[msg.sender][name];

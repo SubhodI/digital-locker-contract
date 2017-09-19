@@ -56,8 +56,6 @@ contract TestDocument {
     Assert.equal(uploaded[2], expectedURL2, "Reference URL2 should be empty");
   }
 
- 
- 
- 
+  
   
 }
