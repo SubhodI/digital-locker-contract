@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/SubhodI/digital-locker-contract.svg?branch=master)](https://travis-ci.org/SubhodI/digital-locker-contract) 
-[![Coverage Status](https://coveralls.io/repos/github/SubhodI/digital-locker-contract/badge.svg?branch=master)](https://coveralls.io/github/SubhodI/digital-locker-contract?branch=master)
-
+[![Coverage Status](https://coveralls.io/repos/github/SubhodI/digital-locker-contract/badge.svg)](https://coveralls.io/github/SubhodI/digital-locker-contract)
 # digital-locker-contract
 Code coverage using truffle and solidity-coverage
 
