@@ -65,7 +65,7 @@ contract Document {
     }
 
     // get document data
-    function getDocument(bytes32 pName) pure returns(bytes32[4]) {
+    function getDocument(bytes32 pName) view returns(bytes32[4]) {
         bytes32[4] memory temp;
         temp[0] = documents[msg.sender][pName].name;
         temp[1] = documents[msg.sender][pName].referenceURL1;
@@ -75,7 +75,7 @@ contract Document {
     }
 
     // get document list
-    function getDocumentTags() constant returns(bytes32[]) {
+    function getDocumentTags() view returns(bytes32[]) {
         return tags[msg.sender].documentTags;
     }
 
