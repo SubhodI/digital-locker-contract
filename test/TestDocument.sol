@@ -1,4 +1,4 @@
-pragma solidity ^0.4.2;
+pragma solidity ^0.5.0;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
@@ -6,7 +6,7 @@ import "../contracts/Document.sol";
 
 contract TestDocument {
 
-  function testAddDocument() {
+  function testAddDocument() public {
     Document document = Document(DeployedAddresses.Document());
 
     document.addDocument("name", "pReferenceURL1", "pReferenceURL2");
@@ -22,7 +22,7 @@ contract TestDocument {
     Assert.equal(uploaded[2], expectedURL2, "Reference URL2 should be same");
   }
 
-   function testUpdateDocument() {
+   function testUpdateDocument() public {
     Document document = Document(DeployedAddresses.Document());
 
     document.updateDocument("name", "IPFS-link1", "IPFS-link2");
@@ -39,7 +39,7 @@ contract TestDocument {
     Assert.equal(uploaded[2], expectedURL2, "Reference URL2 should be IPFS-link2");
   }
 
-  function testDeleteDocument() {
+  function testDeleteDocument() public {
     Document document = Document(DeployedAddresses.Document());
 
     document.deleteDocument("name");

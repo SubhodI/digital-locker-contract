@@ -29,7 +29,7 @@ contract Document {
     event DeleteDocument(address indexed from, bytes32 indexed docName);
 
     // add document function
-    function addDocument(bytes32 name, bytes32 pReferenceURL1, bytes32 pReferenceURL2) {
+    function addDocument(bytes32 name, bytes32 pReferenceURL1, bytes32 pReferenceURL2) public {
         documents[msg.sender][name] = Document({
             name: name,
             date: now,
@@ -41,7 +41,7 @@ contract Document {
     }
 
     // update document function
-    function updateDocument(bytes32 name, bytes32 pReferenceURL1, bytes32 pReferenceURL2) {
+    function updateDocument(bytes32 name, bytes32 pReferenceURL1, bytes32 pReferenceURL2) public {
         documents[msg.sender][name] = Document({
             name: name,
             date: now,
@@ -52,7 +52,7 @@ contract Document {
     }
 
     // delete document function
-    function deleteDocument(bytes32 name) {
+    function deleteDocument(bytes32 name) public {
         for (uint i = 0; i < tags[msg.sender].documentTags.length; i++) {
             if (tags[msg.sender].documentTags[i] == name) {
                 delete tags[msg.sender].documentTags[i];
@@ -65,7 +65,7 @@ contract Document {
     }
 
     // get document data
-    function getDocument(bytes32 pName) view returns(bytes32[4]) {
+    function getDocument(bytes32 pName) view returns(bytes32[4]) public {
         bytes32[4] memory temp;
         temp[0] = documents[msg.sender][pName].name;
         temp[1] = documents[msg.sender][pName].referenceURL1;
