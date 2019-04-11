@@ -19,6 +19,8 @@ steps:
     npm install
     npm install -g truffle
     npm install -g ethereumjs-testrpc
+    testrpc > /dev/null &
+    sleep 5
     npm test
     npm run coverage && cat coverage/lcov.info | coveralls
   displayName: 'npm install and build'
