@@ -37,7 +37,7 @@ contract Document {
             referenceURL2: pReferenceURL2
         });
         tags[msg.sender].documentTags.push(name);
-        AddDocument(msg.sender, name); //Log event
+        emit AddDocument(msg.sender, name); //Log event
     }
 
     // update document function
@@ -48,7 +48,7 @@ contract Document {
             referenceURL1: pReferenceURL1,
             referenceURL2: pReferenceURL2
         });
-        UpdateDocument(msg.sender, name); // Log event
+        emit UpdateDocument(msg.sender, name); // Log event
     }
 
     // delete document function
@@ -57,15 +57,15 @@ contract Document {
             if (tags[msg.sender].documentTags[i] == name) {
                 delete tags[msg.sender].documentTags[i];
             } else {
-                throw;
+                revert();
             }
         }
         delete documents[msg.sender][name];
-        DeleteDocument(msg.sender, name); // Log event
+        emit DeleteDocument(msg.sender, name); // Log event
     }
 
     // get document data
-    function getDocument(bytes32 pName) view returns(bytes32[4]) public {
+    function getDocument(bytes32 pName) public view returns(bytes32[4] memory) {
         bytes32[4] memory temp;
         temp[0] = documents[msg.sender][pName].name;
         temp[1] = documents[msg.sender][pName].referenceURL1;
@@ -75,8 +75,8 @@ contract Document {
     }
 
     // get document list
-    function getDocumentTags() view returns(bytes32[]) {
-        return tags[msg.sender].documentTags;
+    function getDocumentTags() public view returns(bytes32[] memory) {
+        return  tags[msg.sender].documentTags;
     }
 
 }
